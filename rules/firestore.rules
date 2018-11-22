@@ -2,8 +2,13 @@ service cloud.firestore {
     function isAuthenticated() {
         return request.auth != null
     }
+
+    function isUser(userId) {
+        return request.auth.uid == userId
+    }
+
     match /databases/{database}/documents {
-        match /{document=**} {
+        match /users/{userId} {
             allow read, write: if isAuthenticated();
         }
     }
