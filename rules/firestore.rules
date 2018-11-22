@@ -2,8 +2,9 @@ service cloud.firestore {
     function isAuthenticated() {
         return request.auth != null
     }
-
     match /databases/{database}/documents {
-        allow read, write: if isAuthenticated();
+        match /{document=**} {
+            allow read, write: if isAuthenticated();
+        }
     }
 }
