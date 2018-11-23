@@ -7,10 +7,18 @@ service cloud.firestore {
         return request.auth.uid == userId
     }
 
+    function isAdmin() {
+        return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+    }
+
     match /databases/{database}/documents {
         match /users/{userId} {
             allow read: if isAuthenticated();
             allow write: if isUser(userId);
+        }
+
+        match /transactions/{transactionId} {
+            allow read: if isAdmin();
         }
     }
 }
