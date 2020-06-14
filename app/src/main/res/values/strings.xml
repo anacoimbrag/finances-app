@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Finances App</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_reports">Reports</string>
+    <string name="title_profile">Profile</string>
+    <string name="loading_text">Wait a little bit while we load your finances…</string>
+    <string name="transaction_description">Description</string>
+    <string name="expense">Expense</string>
+    <string name="income">Income</string>
+    <string name="transaction_category">Category</string>
+    <string name="transaction_date">Date</string>
+    <string name="transaction_amount">Amount</string>
+    <string name="open_calendar">Open calendar</string>
+    <string name="add_transaction">Add Transaction</string>
+    <string name="create_transaction_button">Create transaction</string>
+    <string name="expenses">Expenses</string>
+    <string name="incomes">Incomes</string>
+</resources>

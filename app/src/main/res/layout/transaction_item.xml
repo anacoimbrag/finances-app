@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="?android:colorBackground"
+    android:stateListAnimator="@animator/header_animation"
+    android:theme="@style/AppTheme">
+
+    <com.anacoimbra.android.timeline.Timeline
+        android:id="@+id/transactionTypeIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/space_small"
+        app:bulletIcon="@drawable/ic_rent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lineColor="@color/disabledTextColor"
+        app:linePadding="6dp"
+        app:lineWidth="1dp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/transactionCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_default"
+        android:layout_marginTop="@dimen/space_default"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+        android:textColor="@color/secondaryDarkColor"
+        app:fontFamily="@font/kanit_medium"
+        app:layout_constraintBottom_toTopOf="@id/transactionDescription"
+        app:layout_constraintStart_toEndOf="@id/transactionTypeIndicator"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/lorem" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/transactionDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_default"
+        android:layout_marginTop="@dimen/space_small"
+        android:layout_marginEnd="@dimen/space_small"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        app:layout_constraintBottom_toTopOf="@id/transactionDate"
+        app:layout_constraintEnd_toStartOf="@id/transactionValue"
+        app:layout_constraintStart_toEndOf="@id/transactionTypeIndicator"
+        app:layout_constraintTop_toBottomOf="@id/transactionCategory"
+        tools:text="@tools:sample/lorem/random" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/transactionDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_default"
+        android:layout_marginTop="@dimen/space_small"
+        android:layout_marginBottom="@dimen/space_default"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/disabledTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/transactionTypeIndicator"
+        app:layout_constraintTop_toBottomOf="@id/transactionDescription"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/transactionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_default"
+        android:fontFamily="@font/kanit_medium"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="R$ 10,00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

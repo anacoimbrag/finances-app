@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dashboardBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_default"
+        android:fontFamily="@font/kanit_medium"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:textColor="@color/secondaryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="R$ 100,00" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/expensesChartTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_default"
+        android:text="@string/expenses"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textColor="@color/secondaryDarkColor"
+        app:fontFamily="@font/kanit_medium"
+        app:layout_constraintEnd_toEndOf="@id/expensesChart"
+        app:layout_constraintStart_toStartOf="@id/expensesChart"
+        app:layout_constraintTop_toBottomOf="@id/dashboardBalance" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/expensesChart"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toStartOf="@id/incomesChart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expensesChartTitle" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/incomesChartTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_default"
+        android:text="@string/incomes"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textColor="@color/secondaryDarkColor"
+        app:fontFamily="@font/kanit_medium"
+        app:layout_constraintEnd_toEndOf="@id/incomesChart"
+        app:layout_constraintStart_toStartOf="@id/incomesChart"
+        app:layout_constraintTop_toBottomOf="@id/dashboardBalance" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/incomesChart"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/expensesChart"
+        app:layout_constraintTop_toBottomOf="@id/incomesChartTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

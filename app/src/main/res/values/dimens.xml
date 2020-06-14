@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="space_big">30dp</dimen>
+    <dimen name="space_default">20dp</dimen>
+    <dimen name="space_small">10dp</dimen>
+    <dimen name="space_micro">10dp</dimen>
+    <dimen name="dashboard_header_size">200dp</dimen>
+</resources>
